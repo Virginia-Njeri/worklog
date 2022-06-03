@@ -4,4 +4,10 @@
     <string name="login">Login</string>
     <string name="enter_password">Enter password</string>
     <string name="enter_your_email">Enter your email</string>
+    <string name="first_name">First Name</string>
+    <string name="enter_email">Enter email</string>
+    <string name="Enter_password">Enter password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="already_have_an_account_login">Already have an account? Login</string>
+    <string name="last_name">Last Name</string>
 </resources>
