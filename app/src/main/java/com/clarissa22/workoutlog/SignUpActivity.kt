@@ -19,6 +19,8 @@ class SignUpActivity : AppCompatActivity() {
  lateinit var etPassword2:TextInputEditText
  lateinit var btnSignup:Button
  lateinit var tvLogin:TextView
+ lateinit var tilConfirmpassword:TextInputLayout
+ lateinit var etConfirm:TextInputEditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,10 +35,14 @@ class SignUpActivity : AppCompatActivity() {
         etPassword2=findViewById(R.id.etPassword2)
         btnSignup=findViewById(R.id.btnSignup)
         tvLogin=findViewById(R.id.tvLogin)
+        tilConfirmpassword=findViewById(R.id.tilConfirmPassword)
+        etConfirm=findViewById(R.id.etConfirm)
+
 
         btnSignup.setOnClickListener { validateSignup() }
         tvLogin.setOnClickListener {
             val intent= Intent(this,LoginActivity::class.java)
+            startActivity(intent)
         }
 
 
@@ -65,6 +71,12 @@ class SignUpActivity : AppCompatActivity() {
         if (password.isBlank()){
             tilPassword2.error="Password is required"
              }
+        var confirm=etConfirm.text.toString()
+        if (confirm.isBlank()){
+            tilConfirmpassword.error="Password is required"
+        }
+
+
 
 
 
