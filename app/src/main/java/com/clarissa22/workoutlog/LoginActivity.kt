@@ -3,6 +3,7 @@ package com.clarissa22.workoutlog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Button
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
@@ -38,8 +39,11 @@ class LoginActivity : AppCompatActivity() {
         var email = etEmail.text.toString()
         var password = etPassword.text.toString()
         if (email.isBlank()){
-
         tilEmail.error = "Email is invalid"
+        }
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            tilEmail.error = "Email is invalid"
+
         }
         if (password.isBlank()){
             tilPassword.error= "Password required"

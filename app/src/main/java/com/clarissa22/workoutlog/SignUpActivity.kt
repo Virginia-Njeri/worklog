@@ -38,12 +38,11 @@ class SignUpActivity : AppCompatActivity() {
         tilConfirmpassword=findViewById(R.id.tilConfirmPassword)
         etConfirm=findViewById(R.id.etConfirm)
 
-
-        btnSignup.setOnClickListener { validateSignup() }
         tvLogin.setOnClickListener {
             val intent= Intent(this,LoginActivity::class.java)
             startActivity(intent)
         }
+        btnSignup.setOnClickListener { validateSignup() }
 
 
     }
@@ -73,8 +72,12 @@ class SignUpActivity : AppCompatActivity() {
              }
         var confirm=etConfirm.text.toString()
         if (confirm.isBlank()){
-            tilConfirmpassword.error="Password is required"
+            tilConfirmpassword.error="Confirm password is required"
         }
+        if (password!=confirm){
+            tilConfirmpassword.error="password does not match"
+        }
+
 
 
 

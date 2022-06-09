@@ -5,13 +5,14 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.2015" />
         <entry key="app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/ic_baseline_name_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2015" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_password_lock_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/splash_bg.xml" value="0.1175" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19375" />
-        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.15" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_circle.xml" value="0.1" />
