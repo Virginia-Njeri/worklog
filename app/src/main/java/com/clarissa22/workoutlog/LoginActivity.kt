@@ -15,43 +15,52 @@ class LoginActivity : AppCompatActivity() {
     lateinit var etEmail: TextInputEditText
     lateinit var tilPassword: TextInputLayout
     lateinit var etPassword: TextInputEditText
-    lateinit var tvSignup:TextView
+    lateinit var tvSignup: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+
+
+views()
+    }
+
+    fun validateLogin() {
+        var email = etEmail.text.toString()
+        var password = etPassword.text.toString()
+        if (email.isBlank()) {
+            tilEmail.error = "Email is invalid"
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            tilEmail.error = "Email is invalid"
+
+        }
+        if (password.isBlank()) {
+            tilPassword.error = "Password required"
+        }
+
+
+    }
+
+    fun views() {
         btnLogin = findViewById(R.id.btnLogin)
         tilEmail = findViewById(R.id.tilEmail)
         etEmail = findViewById(R.id.etEmail)
         tilPassword = findViewById(R.id.tilPassword)
         etPassword = findViewById(R.id.etPassword)
-        tvSignup=findViewById(R.id.tvSignup)
+        tvSignup = findViewById(R.id.tvSignup)
 
-        btnLogin.setOnClickListener { validateLogin()
-        startActivity(Intent(this,HomeActivity::class.java))
+        btnLogin.setOnClickListener {
+            validateLogin()
+            startActivity(Intent(this, HomeActivity::class.java))
         }
 
         tvSignup.setOnClickListener {
-            val intent=Intent(this,SignUpActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
-
     }
-    fun validateLogin() {
-        var email = etEmail.text.toString()
-        var password = etPassword.text.toString()
-        if (email.isBlank()){
-        tilEmail.error = "Email is invalid"
-        }
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            tilEmail.error = "Email is invalid"
 
-        }
-        if (password.isBlank()){
-            tilPassword.error= "Password required"
-        }
-
-
-    }
 }
 
          //        tilEmail.error =

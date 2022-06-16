@@ -7,7 +7,7 @@
     tools:context=".HomeActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/botttom_navigation"
+        android:id="@+id/bnvHome"
         android:layout_width="0dp"
         android:layout_height="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,11 +16,11 @@
         app:menu="@menu/bottom_nav_menu" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
+        android:id="@+id/fcvHome"
         android:name="com.clarissa22.workoutlog.PlanFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/botttom_navigation"
+        app:layout_constraintBottom_toTopOf="@+id/bnvHome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
