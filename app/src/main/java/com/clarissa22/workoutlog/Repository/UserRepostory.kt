@@ -19,6 +19,7 @@ class UserRepostory {
     }
     suspend fun registerUser(registerRequest: RegisterRequest)=
         withContext(Dispatchers.IO) {
+            val request= apiClient.registerUser(registerRequest)
             return@withContext apiClient.registerUser(registerRequest)
         }
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
+import com.clarissa22.workoutlog.R
 import com.clarissa22.workoutlog.apis.Apiclient
 import com.clarissa22.workoutlog.apis.ApiInterface
 import com.clarissa22.workoutlog.databinding.ActivitySignUpBinding
@@ -30,17 +31,18 @@ class SignUpActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        userViewModel.loginResponsLiveData.observe(
+        userViewModel.registeresponsLiveData.observe(
             this,
             androidx.lifecycle.Observer { registerResponse ->
                 Toast.makeText(baseContext, registerResponse.message, Toast.LENGTH_LONG).show()
                 startActivity(Intent(baseContext, LoginActivity::class.java))
-                Toast.makeText(baseContext,registerResponse?.message,Toast.LENGTH_LONG).show()
+//                Toast.makeText(baseContext,registerResponse?.message,Toast.LENGTH_LONG).show()
             })
-        userViewModel.loginResponsLiveData.observe(
+        userViewModel.registeresponsLiveData.observe(
             this,
             androidx.lifecycle.Observer { registerError ->
                 Toast.makeText(baseContext, registerError, Toast.LENGTH_LONG).show()
+//                Toast.makeText(baseContext, registerError, Toast.LENGTH_LONG).show()
             })
     }
 
@@ -102,10 +104,10 @@ class SignUpActivity : AppCompatActivity() {
             error = true
 
         }
-        if (!Pattern.EMAIL_ADDRESS.matcher(email3).matches()) {
-            binding.tilEmail2.error = "Not a valid email address"
-            error = true
-        }
+//        if (!Pattern.EMAIL_ADDRESS.matcher(email3).matches()) {
+//            binding.tilEmail2.error = "Not a valid email address"
+//            error = true
+//        }
         if (password2 != confirm) {
             binding.tilConfirmPassword.error = "password does not match"
 
